@@ -9,7 +9,8 @@ def forecast(sales, p_variation, first_month, last_month)
     i_end = last_month  - 1
     sum_extra= sales[i_start..i_end].sum
 
-    aumento = sum_extra * (1+p_variation/100.0)  
+    aumento = sum_extra * (1+p_variation/100.0)
+    '%.2f' % aumento
 end
 
 data = []
@@ -36,5 +37,6 @@ def forecast2(sales, p_variation, first_month, last_month)
     aumento = sum_extra * (p_variation/100.0)  
 
     #se suma lo extra con las ventas normales
-    aumento + suma_total
+    total = aumento + suma_total
+    '%.2f' % total
 end
